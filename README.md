@@ -1,0 +1,2 @@
+# GMailToLine
+GMaileに届いた内容をLINEに転送する仕組み
