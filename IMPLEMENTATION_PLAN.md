@@ -55,7 +55,7 @@ Cloud Scheduler (5分毎)
 
 ### 1.2 Terraform初回実行
 
-- [ ] feat/1_TerraformSetting ブランチを dev にマージ (現在feat/1_TerraformSettingで作業中)
+- [ ] ~~feat/1_TerraformSetting ブランチを dev にマージ (現在feat/1_TerraformSettingで作業中)~~ 
 - [ ] ~~新ブランチ作成: `feat/2_complete-terraform`~~ (feat/1_TerraformSettingで継続)
 - [x] ~~GCP認証設定確認~~ ✅ **完了**
   ```bash
@@ -69,12 +69,12 @@ Cloud Scheduler (5分毎)
   terraform plan     ✅ 完了
   terraform apply    ⏳ 未実行（キャンセル済み）
   ```
-- [ ] GCPコンソールで以下を確認: (terraform apply後に実施)
-  - Artifact Registryリポジトリ作成
-  - Cloud Runサービス作成（イメージ未設定でエラー表示は正常）
-  - Secret Manager secrets作成（空）
-  - Service Accounts作成
-  - Cloud Scheduler作成
+- ~~[ ] GCPコンソールで以下を確認: (terraform apply後に実施)~~
+  - ~~Artifact Registryリポジトリ作成~~
+  - ~~Cloud Runサービス作成（イメージ未設定でエラー表示は正常）~~
+  - ~~Secret Manager secrets作成（空）~~
+  - ~~Service Accounts作成~~
+  - ~~Cloud Scheduler作成~~
 
 **重要ファイル**:
 - [terraform/main.tf](terraform/main.tf)
@@ -89,7 +89,7 @@ Cloud Scheduler (5分毎)
 
 ### 2.1 アプリケーション構造作成
 
-- [ ] **app/** ディレクトリ作成
+- [ ] ~~**app/** ディレクトリ作成~~
 
 - [ ] **app/main.py** を作成
   - Flask Webサーバー（Cloud Run用）
