@@ -158,7 +158,8 @@ resource "google_cloud_run_service" "gmail_line_app" {
       service_account_name = google_service_account.cloud_run_sa.email
 
       containers {
-        image = "asia-northeast1-docker.pkg.dev/grounded-region-477206-b6/gmail-line-repo/app:latest"
+        # Temporary placeholder image until app is built
+        image = "gcr.io/cloudrun/hello"
 
         resources {
           limits = {
@@ -217,8 +218,8 @@ resource "google_cloud_run_service_iam_member" "cloud_scheduler_invoker" {
 # Cloud Scheduler Job
 resource "google_cloud_scheduler_job" "gmail_line_scheduler" {
   name             = "gmail-line-scheduler"
-  description      = "Trigger Gmail to LINE notification every 5 minutes"
-  schedule         = "*/5 * * * *"
+  description      = "Trigger Gmail to LINE notification every other day at 9:00 AM"
+  schedule         = "0 9 */2 * *"
   time_zone        = "Asia/Tokyo"
   attempt_deadline = "320s"
   region           = "asia-northeast1"
