@@ -89,10 +89,10 @@ Cloud Scheduler (5分毎)
 
 ### 2.1 アプリケーション構造作成
 
-- [ ] **app/** ディレクトリ作成
+- [ ] ~~**app/** ディレクトリ作成~~
 
 - [ ] **app/main.py** を作成
-  - Flask Webサーバー（Cloud Run用）
+  - FastAPI Webサーバー（Cloud Run用）
   - エンドポイント:
     - `GET /health` - ヘルスチェック
     - `POST /` - Cloud Schedulerからのトリガー受信
@@ -101,11 +101,12 @@ Cloud Scheduler (5分毎)
   - LINE Messaging API連携（通知送信）
   - 構造化ログ出力（Cloud Logging対応）
   - エラーハンドリング
+  - 非同期処理対応
 
 - [ ] **app/requirements.txt** を作成
   ```
-  Flask==3.0.0
-  gunicorn==21.2.0
+  fastapi==0.109.0
+  uvicorn[standard]==0.27.0
   google-auth==2.25.0
   google-auth-oauthlib==1.2.0
   google-auth-httplib2==0.2.0
@@ -123,7 +124,7 @@ Cloud Scheduler (5分毎)
   RUN pip install --no-cache-dir -r requirements.txt
   COPY . .
   ENV PORT=8080
-  CMD exec gunicorn --bind :$PORT --workers 1 --threads 8 --timeout 60 main:app
+  CMD exec uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
   ```
 
 - [ ] **app/.dockerignore** を作成
