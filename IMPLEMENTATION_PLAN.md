@@ -92,18 +92,18 @@ Cloud Scheduler (5分毎)
 - [ ] ~~**app/** ディレクトリ作成~~
 
 - [ ] **app/main.py** を作成
-  - FastAPI Webサーバー（Cloud Run用）
-  - エンドポイント:
-    - `GET /health` - ヘルスチェック
-    - `POST /` - Cloud Schedulerからのトリガー受信
-  - Secret Managerから認証情報取得
-  - Gmail API連携（未読メール取得、最大10件）
-  - LINE Messaging API連携（通知送信）
-  - 構造化ログ出力（Cloud Logging対応）
-  - エラーハンドリング
-  - 非同期処理対応
+  - ~~FastAPI Webサーバー（Cloud Run用）~~
+  - ~~エンドポイント:~~
+    - ~~`GET /health` - ヘルスチェック~~
+    - ~~`POST /` - Cloud Schedulerからのトリガー受信~~
+  - ~~Secret Managerから認証情報取得~~
+  - ~~Gmail API連携（未読メール取得、最大10件）~~
+  - ~~LINE Messaging API連携（通知送信）~~
+  - ~~構造化ログ出力（Cloud Logging対応）~~
+  - ~~エラーハンドリング~~
+  - ~~非同期処理対応~~
 
-- [ ] **app/requirements.txt** を作成
+- [ ] ~~**app/requirements.txt** を作成~~
   ```
   fastapi==0.109.0
   uvicorn[standard]==0.27.0
@@ -116,7 +116,7 @@ Cloud Scheduler (5分毎)
   line-bot-sdk==3.6.0
   ```
 
-- [ ] **app/Dockerfile** を作成
+- [ ] ~~**app/Dockerfile** を作成~~
   ```dockerfile
   FROM python:3.11-slim
   WORKDIR /app
@@ -127,7 +127,7 @@ Cloud Scheduler (5分毎)
   CMD exec uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
   ```
 
-- [ ] **app/.dockerignore** を作成
+- [ ] ~~**app/.dockerignore** を作成~~
   ```
   __pycache__
   *.pyc
